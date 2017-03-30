@@ -1,0 +1,60 @@
+.multiSelect {
+    overflow: auto;
+}
+.multiSelect .select {
+    margin-right: 12px;
+    float: left;
+}
+.multiSelect .text {
+    clear: both;
+    font-size: 11px;
+}
+
+.multiSelect label {
+  font-weight: bold;
+}
+.multiSelect label::after {
+    content: ":";
+}
+.multiSelect .select select {
+    height: 250px;
+    overflow: auto;
+}
+
+.multiSelect .toolbar {
+  margin-top: 55px;
+}
+.btn.mover {
+    display: block;
+    vertical-align: top;
+    padding: 3px 7px;
+    margin-top: 30px;
+}
+.btn.mover i {
+    margin: 0;
+}
+
+.btn.sorter {
+    display: block;
+    vertical-align: top;
+    padding: 3px 7px;
+    margin-top: 10px;
+    margin-left: -8px;
+}
+.btn.sorter i {
+    margin: 0;
+}
+
+.searchclear {
+    position: absolute;
+    right: 5px;
+    top: 7px;
+    margin: auto;
+    font-size: 16px;
+    cursor: pointer;
+    color: #ddd;
+}
+
+.searchclear:hover {
+    color: #e77;
+}

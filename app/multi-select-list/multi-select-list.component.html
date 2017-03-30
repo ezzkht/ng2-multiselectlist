@@ -1,0 +1,63 @@
+<div class="multiSelect">
+	
+	<div class="select">
+		<label class="control-label" for="availableRecords">{{availableLabel}} ({{available.length}})</label>
+		<div class="btn-group" style="display:block">
+		    <input type="search" class="form-control" placeholder={{availablePlaceHolder}}
+		    [(ngModel)]="filter1" (ngModelChange)="onFilter1Changed()" />
+		    <i class="searchclear fa fa-times-circle" *ngIf="filter1.length" title="Clear"
+		    (click)="onClearFilter1()"></i>
+		</div>
+		<select id="availableRecords" [(ngModel)]="selected.available" multiple>
+		<option *ngFor="let e of available | textFilter:_filterTerm1" [text]="e[displayAttr]" [value]="e"></option>
+		</select>
+	</div>
+	
+	<div class="select buttons toolbar">
+		<button class="btn mover" (click)="add()" title="Add Selected"
+		[disabled]="selected.available.length == 0">
+			<i class="fa fa-angle-right icon-fixed-width"></i>
+		</button>
+		
+		<button class="btn mover" (click)="remove()" title="Remove Selected"
+		[disabled]="selected.current.length == 0">
+			<i class="fa fa-angle-left icon-fixed-width"></i>
+	  </button>
+	  
+	  <button class="btn mover" (click)="addAll()" title="Add All"
+		[disabled]="available.length == 0">
+			<i class="fa fa-angle-double-right icon-fixed-width"></i>
+		</button>
+		
+	  <button class="btn mover" (click)="removeAll()" title="Remove All"
+		[disabled]="selection.length == 0">
+			<i class="fa fa-angle-double-left icon-fixed-width"></i>
+	  </button>
+	</div>
+	
+	<div class="select">
+		<label class="control-label" for="selectedRecords">{{ selectedLabel }} ({{ selection.length }})</label>
+		<div class="btn-group" style="display:block">
+		    <input type="search" class="form-control" placeholder={{selectedPlaceHolder}}
+		    [(ngModel)]="filter2" (ngModelChange)="onFilter2Changed()" />
+		    <i class="searchclear fa fa-times-circle" *ngIf="filter2.length" title="Clear"
+		    (click)="onClearFilter2()"></i>
+		</div>
+		<select id="selectedRecords" [(ngModel)]="selected.current" multiple class="pull-left">
+		 <option *ngFor="let e of selection | textFilter:_filterTerm2" [text]="e[displayAttr]" [value]="e"></option>
+		</select>
+	</div>
+	
+	<div class="select buttons toolbar" *ngIf="allowSorting">
+	    <button class="btn sorter" (click)="moveUp()" title="Move Up"
+		[disabled]="!canMoveUp()">
+			<i class="fa fa-chevron-up icon-fixed-width"></i>
+		</button>
+		
+		<button class="btn sorter" (click)="moveDown()" title="Move Down"
+		[disabled]="!canMoveDown()">
+			<i class="fa fa-chevron-down icon-fixed-width"></i>
+		</button>
+	</div>
+	
+</div>

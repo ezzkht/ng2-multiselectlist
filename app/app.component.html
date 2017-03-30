@@ -1,0 +1,15 @@
+<div>
+      <h2>NG2-MultiSelectList Demo</h2>
+      <br/>
+      
+      <multi-select-list [available]="countries" [(selection)]="company.branches" 
+      availableLabel="Available Countries" selectedLabel="Current Branches"
+      availablePlaceHolder="Filter Countries..." selectedPlaceHolder="Filter Branches..."
+      allowSorting="true" displayAttr="name">
+      </multi-select-list>
+      
+      <div>{{ company.name }}'s branches: </div>
+      <ul>
+        <li *ngFor="let branch of company.branches">{{ branch.name }}</li>
+      </ul>
+</div>
