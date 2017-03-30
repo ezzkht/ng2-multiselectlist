@@ -1,7 +1,3 @@
-### Angular2 Starter Plunker - Typescript - RC.0
+### Angular2 Multi-Select List control
 
-A simple plunker demonstrating Angular2 usage:
-- Uses SystemJS + TypeScript to compile on the fly
-- Includes binding, directives, http, pipes, and DI usage.
-
-For opening 
+Written purely on Angular 2.
